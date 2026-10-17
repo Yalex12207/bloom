@@ -1,0 +1,49 @@
+/* The existing five sections remain the native scroll surface. One canvas persists. */
+.cinematic-enabled .chapter{min-height:max(1100px,160svh)}
+.cinematic-enabled .chapter--rebirth{min-height:max(1500px,200svh);padding-bottom:240px}
+.cinematic-enabled .hero__wordmark{clip-path:inset(calc((1 - var(--hero-reveal,1))*100%) 0 0 0);will-change:clip-path}
+.cinematic-enabled .hero__wordmark-wrap{transform:translateY(calc(min(var(--cinema-progress,0),.2)*220svh))}
+.cinematic-enabled .hero__intro,.cinematic-enabled .hero__edition,.cinematic-enabled .hero__bottom,.cinematic-enabled .hero__footer{opacity:clamp(0,calc(1 - var(--cinema-progress,0)*14),1)}
+.cinematic-enabled .hero__bottom:focus-within{opacity:1}
+.cinematic-enabled .chapter__body,.cinematic-enabled .fracture-composition{position:sticky;top:calc(var(--header-height) + 25px);z-index:3;pointer-events:none}
+.cinematic-enabled .chapter-copy,.cinematic-enabled .rebirth-content{pointer-events:none}
+.flower-controls-host{position:fixed;inset:0;pointer-events:none;z-index:10}
+.cinematic-enabled .chapter-heading,.cinematic-enabled .chapter-copy,.cinematic-enabled .chapter__foot,.cinematic-enabled .rebirth-content,.cinematic-enabled .site-footer{position:relative;z-index:4}
+.cinematic-enabled .chapter__foot{position:absolute}
+.cinematic-enabled .chapter-link,.cinematic-enabled .return-link,.cinematic-enabled .footer-top{position:relative;z-index:7;pointer-events:auto}
+.cinematic-enabled .fracture-type{opacity:.16}
+.cinematic-enabled .genesis-art,.cinematic-enabled .metamorphosis-art{opacity:.14;pointer-events:none}
+.cinematic-enabled .reborn-title{font-size:clamp(80px,14vw,225px);line-height:1.1;letter-spacing:-.075em;clip-path:inset(calc((1 - var(--reborn-reveal,1))*100%) 0 0 0)}
+.cinematic-enabled .rebirth-content{padding-top:55px;position:sticky;top:15svh}
+.cinematic-enabled .rebirth-star{right:-4%;top:-10%;width:7vw}
+.cinematic-enabled .site-footer{position:absolute;left:var(--gutter);right:var(--gutter);bottom:36px;margin-top:0}
+.replay-experience{min-height:48px;padding:8px 0 13px;letter-spacing:.1em;font:10px "Courier New",monospace;text-align:left}
+.replay-experience>span:last-child{font-size:20px;color:var(--crimson)}
+.cinematic-overlay{position:fixed;inset:0;z-index:6;pointer-events:none;overflow:hidden}
+.cinematic-veil{position:absolute;inset:0;background:#020305;opacity:calc(var(--cinema-veil,0)*.28)}
+.cinematic-letterbox{position:absolute;left:0;right:0;height:calc(var(--cinema-veil,0)*4svh);background:#060608;opacity:.75}
+.cinematic-letterbox--top{top:0}.cinematic-letterbox--bottom{bottom:0}
+.cinematic-velocity{position:absolute;inset:0;width:100%;height:100%;opacity:calc(var(--cinema-shock,0)*.55)}
+.cinematic-enabled .hero__intro,.cinematic-enabled .hero__edition{pointer-events:none}
+.cinematic-enabled [data-reveal]{will-change:clip-path,transform}
+@media(max-width:767px){
+ .cinematic-enabled .chapter{min-height:135svh}
+ .cinematic-enabled .chapter--rebirth{min-height:200svh;padding-bottom:350px}
+ .cinematic-enabled .rebirth-content{padding-top:32px;padding-bottom:32px;top:calc(var(--header-height) + 24px)}
+ .cinematic-enabled .rebirth-content>.section-kicker{margin-bottom:18px}
+ .cinematic-enabled .rebirth-content__bottom{margin-top:24px;gap:18px}
+ .cinematic-enabled .reborn-title{font-size:20vw}
+ .cinematic-enabled .site-footer{bottom:75px;padding-top:18px;gap:18px}
+ .cinematic-enabled .chapter__body{gap:45px}
+ .cinematic-enabled .chapter__body,.cinematic-enabled .fracture-composition{position:relative;top:auto}
+ .cinematic-enabled .rebirth-star{width:11vw}
+ .cinematic-veil{opacity:calc(var(--cinema-veil,0)*.14)}
+}
+@media(prefers-reduced-motion:reduce){
+ .cinematic-velocity,.cinematic-letterbox{display:none}
+ .cinematic-enabled [data-reveal]{will-change:auto}
+ .cinematic-veil{opacity:0}
+ .cinematic-enabled .hero__wordmark,.cinematic-enabled .reborn-title{clip-path:none;will-change:auto}
+ .cinematic-enabled .hero__wordmark-wrap{transform:none}
+ .cinematic-enabled .hero__intro,.cinematic-enabled .hero__edition,.cinematic-enabled .hero__bottom,.cinematic-enabled .hero__footer{opacity:1}
+}

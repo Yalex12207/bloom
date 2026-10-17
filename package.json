@@ -1,0 +1,44 @@
+{
+  "name": "bloom-the-art-of-becoming",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test src/components/scene/flower/flower.test.mjs src/components/scene/flower/FlowerMaterials.test.mjs src/lib/cinematic-state.test.mjs src/lib/petal-cinematic-pose.test.mjs src/lib/ThemeController.test.mjs src/lib/FrameBudget.test.mjs src/audio/*.test.mjs",
+    "audio:generate": "node scripts/generate-score.mjs",
+    "test:browser": "node scripts/verify-production.mjs",
+    "test:cinematic": "node scripts/verify-cinematic.mjs",
+    "test:themes": "node --experimental-strip-types scripts/verify-theme.mjs",
+    "test:performance": "node scripts/measure-production.mjs"
+  },
+  "dependencies": {
+    "@react-three/drei": "10.7.9",
+    "@react-three/fiber": "9.8.2",
+    "gsap": "^3.13.0",
+    "motion": "^12.23.24",
+    "next": "16.4.1",
+    "react": "~19.2.0",
+    "react-dom": "~19.2.0",
+    "tailwindcss": "^4.1.0",
+    "three": "^0.186.1",
+    "zustand": "^5.0.8"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.0",
+    "@next/eslint-plugin-next": "16.4.1",
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/three": "^0.186.0",
+    "eslint": "^10.0.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.71.2"
+  },
+  "engines": { "node": "^20.19.0 || ^22.13.0 || >=24.0.0" }
+}

@@ -1,0 +1,29 @@
+.theme-root {
+  --theme-accent:#f04456;
+  --theme-secondary:#8b172f;
+  --theme-atmosphere-a:#26040c;
+  --theme-atmosphere-b:#080a0e;
+  min-height:100svh;
+}
+
+/* The original chapter surfaces sit behind the persistent, unfiltered Canvas. */
+.theme-root .hero,
+.theme-root .chapter {
+  background:
+    radial-gradient(ellipse at 70% 35%,color-mix(in srgb,var(--theme-atmosphere-a) 70%,transparent),transparent 65%),
+    radial-gradient(ellipse at 20% 75%,color-mix(in srgb,var(--theme-atmosphere-b) 65%,transparent),transparent 70%),
+    var(--background);
+}
+.theme-root .section-kicker {color:var(--theme-accent)}
+.theme-root .status-dot {box-shadow:0 0 14px color-mix(in srgb,var(--theme-accent) 35%,transparent)}
+.theme-root .cinematic-velocity line:nth-child(3n + 1) {stroke:var(--theme-accent)}
+.theme-root .cinematic-velocity line:nth-child(3n + 2) {stroke:var(--theme-secondary)}
+.theme-root .fracture-line {background:var(--theme-accent)}
+
+@media(min-width:768px) {
+  .theme-root .rebirth-content__bottom {padding-right:250px;flex-wrap:wrap}
+  .theme-root .site-footer {padding-right:320px;grid-template-columns:1fr 1fr;gap:14px}
+}
+@media(max-width:767px) {
+  .theme-root .site-footer>.footer-top {position:absolute;top:3px;right:0;min-height:24px;padding:0;color:var(--theme-accent)}
+}

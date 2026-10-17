@@ -1,0 +1,41 @@
+/* Finishing details preserve native scroll and the original open compositions. */
+.theme-root :focus-visible { outline: 2px solid var(--theme-accent, #f04456); outline-offset: 5px; }
+.theme-root button:active:not(:disabled) { opacity: .8; }
+.theme-root .muted { color: #a4a6b0; }
+.theme-root .chapter__foot, .theme-root .chapter-heading__note, .theme-root .hero__footer { color: #a0a4b2; }
+.theme-root .site-footer { bottom: calc(110px + env(safe-area-inset-bottom, 0px)); }
+.theme-root .site-footer .micro { font-size: 9px; color: #a4a9b7; }
+.theme-root .footer-top { min-height: 44px; display: flex; align-items: center; justify-content: flex-end; }
+.theme-root [data-flower-controls] { width: 244px; color: #b7bdcc; font-size: 9px; }
+.theme-root [data-flower-controls] > div:first-child { color: #a4abbb; font-size: 8px; }
+.theme-root [data-flower-controls] > div:first-child > span:last-child { color: #9099ac; }
+.theme-root [data-flower-controls] button { min-width: 44px; min-height: 44px; font-size: 9px; color: #b7bdcc; }
+.theme-root [data-flower-controls] button:hover, .theme-root [data-flower-controls] button[aria-pressed="true"] { color: #f0f0f4; }
+.theme-root [data-flower-controls] [aria-label="Petal material"] > span { font-size: 8px; color: #bcc4d3; }
+.theme-root [data-flower-controls] label { min-height: 44px; color: #b3bbcb; font-size: 9px; }
+.theme-root [data-flower-controls] input[type="range"] { min-height: 44px; height: 44px; accent-color: var(--theme-accent, #f04456); }
+.theme-root [data-flower-controls] > div:last-child > button { min-width: 44px; min-height: 44px; }
+.theme-root [data-flower-controls] > div:last-child > button:first-child { font-size: 8px; }
+.theme-root [data-flower-controls] > div:last-child > button:last-child { width: 44px; }
+.theme-root .chapter-progress-link { min-height: 44px; }
+
+@media (max-width: 767px) {
+  .theme-root [data-flower-controls] { width: auto; grid-template-columns: 1fr 1fr; gap: 0 16px; bottom: calc(166px + env(safe-area-inset-bottom, 0px)); }
+  /* Color Lab provides all six palettes; keep this mobile strip for direct sculpting. */
+  .theme-root [data-flower-controls] [aria-label="Petal material"] { display: none; }
+  .theme-root [data-flower-controls] > div:last-child { grid-column: 1 / -1; gap: 10px; }
+  .theme-root [data-flower-controls] > div:last-child > button:first-child { font-size: 9px; }
+  .theme-root [data-flower-controls] label { gap: 8px; }
+  .theme-root [data-flower-controls] label > span { width: 40px; }
+  .theme-root .site-footer { bottom: calc(150px + env(safe-area-inset-bottom, 0px)); }
+  .theme-root .site-footer > .footer-top { top: -8px; min-height: 44px; }
+  .theme-root .chapter-progress { bottom: calc(17px + env(safe-area-inset-bottom, 0px)); }
+  .theme-root .chapter-progress-link { min-height: 44px; }
+  .theme-root .chapter--rebirth { padding-bottom: 380px; }
+  /* The direct flower surface stays interactive; clear the final credits on phones. */
+  .theme-root [data-cinema-finale="true"] [data-flower-controls] { visibility: hidden; pointer-events: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-root button:active:not(:disabled) { opacity: 1; }
+}
